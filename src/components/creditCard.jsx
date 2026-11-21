@@ -8,22 +8,24 @@ function CreditCard({type, number, expirationMonth, expirationYear, bank, owner,
     color: color
   }
   return (
-    <div className="creditCard" style={divStyles}>
-      <div>
-        <span>{type}</span>
+      <div className="creditCard" style={divStyles}>
+        <div className="type">
+          <span>{type}</span>
+        </div>
+        <div className="number">
+          <span className="dots">. . . .</span>
+          <span className="dots">. . . .</span>
+          <span className="dots">. . . .</span>
+          <span>{cardNumbers}</span>
+        </div>
+        <div className="expires">
+          <span>Expires {expirationMonth}/{year}</span>
+          <span>{bank}</span>
+        </div>
+        <div className="owner">
+          <span>{owner}</span>
+        </div>
       </div>
-      <div>
-        <span>···· ···· ···· {cardNumbers}</span>
-      </div>
-      <div>
-        <span>Expires {expirationMonth}/{year}</span>
-        <span>{bank}</span>
-      </div>
-      <div>
-        <span>{owner}</span>
-      </div>
-
-    </div>
   )
 }
 
